@@ -20,12 +20,13 @@ driver = webdriver.Remote("http://localhost:4723", options=options)
 driver.implicitly_wait(10)
 print("Your App Launched Successfully")
 
+#Performing actions
 driver.find_element(AppiumBy.ACCESSIBILITY_ID, "Start").click()
 driver.find_element(AppiumBy.ACCESSIBILITY_ID, "Sign up").click()
 time.sleep(2)
 driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().className("android.widget.EditText").instance(0)').click()
 driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().className("android.widget.EditText").instance(0)').send_keys("Sujan Rijal")
-time.sleep(3)
+time.sleep(3) # hardcore wait
 driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().className("android.widget.EditText").instance(1)').click()
 driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().className("android.widget.EditText").instance(1)').send_keys("Sujantests@gmail.com")
 time.sleep(2)
@@ -49,6 +50,5 @@ time.sleep(3)
 login_button = driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().description("Login")')
 login_button.click()
 time.sleep(10)
-
 print("Login Sucessful")
 
